@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yujie.fulicenter201607.view.activity.MainActivity">
+    tools:context=".view.activity.MainActivity">
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
