@@ -9,7 +9,6 @@ import java.util.*
 /**
  * Created by yujie on 16-10-21.
  */
-object ConvertUtils {
     /*
         case array to list
      */
@@ -35,20 +34,20 @@ object ConvertUtils {
      */
     fun ifEmpty(text: String, widget: EditText): Boolean {
         if (text.isEmpty()){
-            widget.setError("不能为空")
+            widget.error = "不能为空"
             widget.requestFocus()
             return false
         }
         return true
     }
 
-    fun sortData(type: Int, list: ArrayList<NewGoodsBean>): ArrayList<NewGoodsBean>? {
+    fun sortData(type: Int, list: ArrayList<NewGoodsBean>): ArrayList<NewGoodsBean> {
         when(type){
             I.SORT_BY_ADDTIME_ASC   ->{
                 Collections.sort(list,object : Comparator<NewGoodsBean>{
-                    override fun compare(lhs: NewGoodsBean?, rhs: NewGoodsBean?): Int {
-                        val lhstime : Long = lhs!!.addTime
-                        val rhstime : Long = rhs!!.addTime
+                    override fun compare(lhs: NewGoodsBean, rhs: NewGoodsBean): Int {
+                        val lhstime : Long = lhs.addTime
+                        val rhstime : Long = rhs.addTime
                         if (lhstime > rhstime){
                             return 1
                         }else {
@@ -59,9 +58,9 @@ object ConvertUtils {
             }
             I.SORT_BY_ADDTIME_DESC  ->{
                 Collections.sort(list,object : Comparator<NewGoodsBean>{
-                    override fun compare(lhs: NewGoodsBean?, rhs: NewGoodsBean?): Int {
-                        val lhstime : Long = lhs!!.addTime
-                        val rhstime : Long = rhs!!.addTime
+                    override fun compare(lhs: NewGoodsBean, rhs: NewGoodsBean): Int {
+                        val lhstime : Long = lhs.addTime
+                        val rhstime : Long = rhs.addTime
                         if (lhstime < rhstime){
                             return 1
                         }else {
@@ -72,11 +71,11 @@ object ConvertUtils {
             }
             I.SORT_BY_PRICE_ASC     ->{
                 Collections.sort(list,object : Comparator<NewGoodsBean>{
-                    override fun compare(lhs: NewGoodsBean?, rhs: NewGoodsBean?): Int {
-                        val lhscurrencyPrice : String? = lhs?.currencyPrice
-                        val rhscurrencyPrice : String? = rhs?.currencyPrice
-                        val lhsPrice : Long = lhscurrencyPrice?.substring(1, lhscurrencyPrice!!.length)!!.toLong()
-                        val rhsPrice : Long = rhscurrencyPrice?.substring(1, rhscurrencyPrice!!.length)!!.toLong()
+                    override fun compare(lhs: NewGoodsBean, rhs: NewGoodsBean): Int {
+                        val lhscurrencyPrice : String = lhs.currencyPrice
+                        val rhscurrencyPrice : String = rhs.currencyPrice
+                        val lhsPrice : Long = lhscurrencyPrice.substring(1, lhscurrencyPrice.length).toLong()
+                        val rhsPrice : Long = rhscurrencyPrice.substring(1, rhscurrencyPrice.length).toLong()
                         if (lhsPrice > rhsPrice){
                             return 1
                         }else {
@@ -87,11 +86,11 @@ object ConvertUtils {
             }
             I.SORT_BY_PRICE_DESC    ->{
                 Collections.sort(list,object : Comparator<NewGoodsBean>{
-                    override fun compare(lhs: NewGoodsBean?, rhs: NewGoodsBean?): Int {
-                        val lhscurrencyPrice : String? = lhs?.currencyPrice
-                        val rhscurrencyPrice : String? = rhs?.currencyPrice
-                        val lhsPrice : Long = lhscurrencyPrice?.substring(1, lhscurrencyPrice!!.length)!!.toLong()
-                        val rhsPrice : Long = rhscurrencyPrice?.substring(1, rhscurrencyPrice!!.length)!!.toLong()
+                    override fun compare(lhs: NewGoodsBean, rhs: NewGoodsBean): Int {
+                        val lhscurrencyPrice : String = lhs.currencyPrice
+                        val rhscurrencyPrice : String = rhs.currencyPrice
+                        val lhsPrice : Long = lhscurrencyPrice.substring(1, lhscurrencyPrice.length).toLong()
+                        val rhsPrice : Long = rhscurrencyPrice.substring(1, rhscurrencyPrice.length).toLong()
                         if (lhsPrice < rhsPrice){
                             return 1
                         }else {
@@ -104,4 +103,3 @@ object ConvertUtils {
         }
         return list
     }
-}

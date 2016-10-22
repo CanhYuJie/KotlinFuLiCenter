@@ -9,8 +9,9 @@ import android.view.animation.AnimationUtils
 import com.yujie.kotlinfulicenter.FuLiCenterApp
 import com.yujie.kotlinfulicenter.R
 import com.yujie.kotlinfulicenter.model.bean.Result
-import com.yujie.kotlinfulicenter.utils.ActivityUtils
+import com.yujie.kotlinfulicenter.utils.ActFinish
 import com.yujie.kotlinfulicenter.utils.SpUtils
+import com.yujie.kotlinfulicenter.utils.goNextActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -25,8 +26,8 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                ActivityUtils.goNextActivity(mContext,MainActivity::class.java)
-                ActivityUtils.finishActivity(this@SplashActivity)
+                goNextActivity(mContext,MainActivity::class.java,null,null)
+                ActFinish(this@SplashActivity)
             }
 
             override fun onAnimationRepeat(animation: Animation?) {

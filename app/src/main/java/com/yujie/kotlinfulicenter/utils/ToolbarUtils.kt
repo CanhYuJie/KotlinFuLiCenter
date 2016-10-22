@@ -12,7 +12,7 @@ object ToolbarUtils {
      * return a toolbar with params
      */
     val TAG : String = this.javaClass.simpleName
-    fun setToolbar(activity : FragmentActivity, toolbar : Toolbar,title : String, icon : Int) {
+    fun setToolbar(toolbar: Toolbar, title: String, icon: Int) {
         toolbar.title = title
         toolbar.setNavigationIcon(icon)
         toolbar.inflateMenu(R.menu.toolbar_menu)

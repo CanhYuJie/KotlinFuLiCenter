@@ -9,23 +9,16 @@ import java.io.Serializable
 /**
  * Created by yujie on 16-10-21.
  */
-object ActivityUtils {
-
     fun <T>goNextActivity(context : Context, nextActivity : Class<T>,dataClass : Serializable? ,goKey : String?){
         val intent = Intent(context,nextActivity)
-        val bundle = Bundle()
         if (dataClass != null) {
+            val bundle = Bundle()
             bundle.putSerializable(goKey,dataClass)
             intent.putExtras(bundle)
         }
         context.startActivity(intent)
     }
-    fun <T>goNextActivity(context : Context, nextActivity : Class<T>){
-        val intent = Intent(context,nextActivity)
-        context.startActivity(intent)
-    }
 
-    fun finishActivity(context : AppCompatActivity){
+    fun ActFinish(context : AppCompatActivity){
         context.finish()
     }
-}

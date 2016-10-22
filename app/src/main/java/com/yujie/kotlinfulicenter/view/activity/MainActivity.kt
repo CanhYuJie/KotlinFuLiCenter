@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(),IMainView {
     val TAG : String  = MainActivity::class.java.simpleName
     val pre : MainPre = MainPre(this,this)
-    val mContext = this
     var radioArray : Array<RadioButton>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

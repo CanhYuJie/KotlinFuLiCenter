@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#c2bcbc"
     android:id="@+id/fragment_root"
-    tools:context="com.yujie.fulicenter201607.view.fragment.NewGoodFragment">
+    tools:context=".view.activity.MainActivity">
 
     <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"
