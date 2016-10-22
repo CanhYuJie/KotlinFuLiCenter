@@ -34,7 +34,7 @@ class NewGoodsFragment : Fragment(),INewGoodView {
         initToolbar()
         initRefresh()
         pre = NewGoodsPre(this,activity,fragment_RecyclerView_new_goods)
-        pre?.getNewGoods(I.PAGE_ID_DEFAULT,NewGoodsPre.METHOD_INIT)
+        pre?.getNewGoods(I.PAGE_ID_DEFAULT,I.METHOD_INIT)
     }
 
     private fun initRefresh() {
